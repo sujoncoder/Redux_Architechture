@@ -1,0 +1,57 @@
+#   tagTypes: ['Post']                  ===> You registerd in the cached name Post.
+#   refetchOnFocus: true                ===> When focus browser start fetching data.
+#   refetchOnReconnect: true            ===> Fetching data from off line to online.
+#   refetchOnMountOrArgChange: true     ===> When mount and refresh start fetching data.
+#   refetchOnMountOrArgChange: 7        ===> Fetch if cache is old, else use cached data.
+#   pollingInterval: 2000               ===> Fetch data after every time.
+#   skipPollingIfUnfocused: true        ===> If browser tab unfocused hat time off polling
+#   skip: true,                         ===> Skip fetching data.
+#   selectFromResult                    ===> Render/watch inportant data not all.
+#   refetch                             ===> Forcefully refetch.
+
+
+
+
+--------------- 💐 DATA vs CURRENTDATA 💐 ---------------
+
+# DATA
+👉 First time undefined
+👉 পরেরবার cache data ধরে রাখে + নতুন data এলে আপডেট হয়
+
+# CURRENTDATA
+👉 First time undefined
+👉 Refetch শুরু হলে undefined হয়ে যায়
+👉 শুধুমাত্র fresh (নতুন) data আসলে আপডেট হয়
+
+✅ data ব্যবহার করবে যখন:
+UI তে পুরোনো data দেখাতে চাও নতুন data আসার আগ পর্যন্ত।
+flicker / খালি UI এড়াতে চাও (user সবসময় কিছু না কিছু data দেখবে)।
+উদাহরণ: user list, product list, dashboard data ইত্যাদি।
+
+✅ currentData ব্যবহার করবে যখন:
+শুধু fresh data দরকার (cache data ignore করতে চাইলে)।
+loading state স্পষ্ট দেখাতে চাও refetch এর সময়।
+উদাহরণ: sensitive বা real-time data (যেমন: current stock price, live score, payment status)।
+
+📌 এক লাইনে মনে রাখো:
+Always show cached + smooth UI 👉 data
+Always wait for new fresh response 👉 currentData
+
+
+
+------------- 👩‍💻 INFINITE QUERY 👩‍💻 ---------------
+
+# Large dataset lazy load করার জন্য।
+# Page by page / chunk by chunk data fetch করে।
+# Scroll বা “Load More” এ next page load হয়।
+# Cached old pages সাথে merge হয় → smooth UI।
+
+💡 Use Case: social feed, e-commerce product list, chat messages, large tables.
+
+
+------------- 👩‍💻 KEEPUNUSEDDATAFOR 👩‍💻 ---------------
+
+Behavior:
+# Initial fetch: Data network থেকে আসে → cache save হয়
+# Unmount & Return within time: Cached data instant show → no loader, no network request
+# Return after time: Cached data expire → fresh network request → UI update

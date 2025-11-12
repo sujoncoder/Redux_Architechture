@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "name": "Minhazul Islam",
+      "email": "minhazul@example.com",
+      "role": "moderator",
+      "age": 25,
+      "id": "62re"
+    },
+    {
+      "id": "ss0e",
+      "name": "Jerin Jaman",
+      "email": "jerin@example.com",
+      "role": "user",
+      "age": 30
+    },
+    {
+      "id": "62te",
+      "name": "Jannat Biswas",
+      "email": "jannat@example.com",
+      "role": "moderator",
+      "age": 22
+    },
+    {
+      "id": "6d08",
+      "name": "Nuraiya Khaun",
+      "email": "nuraiya.in@gmail.com",
+      "role": "moderator",
+      "age": 22
+    },
+    {
+      "id": "a098",
+      "name": "Sujon Sheikh",
+      "email": "sujonsheikh.in@gmail.com",
+      "role": "ADMIN",
+      "age": 27
+    },
+    {
+      "id": "b149",
+      "name": "Sheikh Sujon",
+      "email": "iamsheikh@gmail.com",
+      "role": "MODERATOR",
+      "age": 33
+    }
+  ]
+}
