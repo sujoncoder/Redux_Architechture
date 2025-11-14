@@ -17,10 +17,6 @@ export const loginUserService = async (payload: Partial<IUser>) => {
         throw new ApiError(HTTP_STATUS.BAD_REQUEST, "User not exist !")
     };
 
-    if (isUserExist.isBlocked) {
-        throw new ApiError(HTTP_STATUS.UNAUTHORIZED, "Your account is blocked !");
-    };
-
     const matchPassword = await bcrypt.compare(password as string, isUserExist.password);
 
     if (!matchPassword) {

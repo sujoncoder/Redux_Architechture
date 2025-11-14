@@ -1,9 +1,7 @@
 import bcrypt from "bcryptjs";
-
 import { SECRET } from "../config/env";
 import { User } from "../modules/user/user.model";
 import { Role, type IUser } from "../modules/user/user.interface";
-
 
 
 // SEED ADMIN
@@ -24,7 +22,6 @@ export const seedAdmin = async () => {
             name: "Admin",
             email: SECRET.ADMIN_EMAIL,
             password: hashedPassword,
-            phone: "01999-986919",
             role: Role.ADMIN,
             isBlocked: false
         };

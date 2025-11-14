@@ -6,7 +6,6 @@ import { getNewAccessToken, loginUser, logout } from "./auth.controller";
 
 
 
-
 // AUTH ROUTES
 export const authRoutes = Router()
     .post("/register", validateRequest(createUserZodSchema), createUser)

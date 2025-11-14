@@ -32,15 +32,3 @@ export const passwordField = z
     .regex(/^(?=.*[A-Z])/, { error: "Password must contain at least 1 uppercase letter." })
     .regex(/^(?=.*[!@#$%^&*])/, { error: "Password must contain at least 1 special character." })
     .regex(/^(?=.*\d)/, { error: "Password must contain at least 1 number." });
-
-
-export const phoneField = z
-    .string({
-        error: (issue) =>
-            issue.input === undefined
-                ? "Phone number is required"
-                : "Phone number must be a string",
-    })
-    .regex(/^(?:\+8801\d{9}|01\d{9})$/, {
-        error: "Phone number must be valid for Bangladesh. Format: +8801XXXXXXXXX or 01XXXXXXXXX",
-    });

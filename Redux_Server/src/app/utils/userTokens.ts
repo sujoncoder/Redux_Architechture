@@ -4,9 +4,9 @@ import { SECRET } from "../config/env";
 import { ApiError } from "../errors/ApiError";
 import { User } from "../modules/user/user.model";
 import { HTTP_STATUS } from "../constants/httpStatus";
-import { IUser } from "../modules/user/user.interface";
 
 import { generateToken, verifyToken } from "./jwt";
+import type { IUser } from "../modules/user/user.interface";
 
 
 // CREATE USER TOKEN
