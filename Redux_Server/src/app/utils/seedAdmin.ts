@@ -23,7 +23,6 @@ export const seedAdmin = async () => {
             email: SECRET.ADMIN_EMAIL,
             password: hashedPassword,
             role: Role.ADMIN,
-            isBlocked: false
         };
 
         await User.create(payload);
